@@ -1,0 +1,190 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Parking Lot administrator one Microservice",
+        "description": "L5 Swagger Parking Lot administrator one description",
+        "contact": {
+            "email": "jreinaz@unal.edu.co"
+        },
+        "version": "1.0.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/api/parkinglot/": {
+            "get": {
+                "summary": "Get All parking lots created by the application user",
+                "operationId": "getAllParkingLots",
+                "parameters": [
+                    {
+                        "name": "getall",
+                        "in": "path",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/parkinglot": {
+            "post": {
+                "summary": "Create parking",
+                "operationId": "createparkinglot",
+                "parameters": [
+                    {
+                        "name": "create a ParkingLot",
+                        "in": "body",
+                        "description": "Create ParkingLot",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id-owner": {
+                                    "type": "integer",
+                                    "example": "5324"
+                                },
+                                "id-client": {
+                                    "type": "integer",
+                                    "example": "123"
+                                },
+                                "Location": {
+                                    "type": "string",
+                                    "example": "cll40kra32"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "example": "car"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/parkinglot/{id}": {
+            "get": {
+                "summary": "Get the parking lot by identification number",
+                "operationId": "getparkinglotById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete the parking lot by identification number",
+                "operationId": "deleteparkinglotById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/parkinglot/{id}": {
+            "put": {
+                "summary": "update parking lot data",
+                "operationId": "update parking lot",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "identify the Parking Lot",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "new ParkingLot data",
+                        "in": "body",
+                        "description": "New ParkingLot update data",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "id-owner": {
+                                    "type": "integer",
+                                    "example": "5324"
+                                },
+                                "id-client": {
+                                    "type": "integer",
+                                    "example": "123"
+                                },
+                                "Location": {
+                                    "type": "string",
+                                    "example": "cll40kra32"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "example": "car"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
