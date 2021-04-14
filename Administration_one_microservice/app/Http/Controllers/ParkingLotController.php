@@ -71,7 +71,7 @@ class ParkingLotController extends Controller
 
     /**
      * @SWG\Get(
-     *   path="/api/parkinglot/{id}",
+     *   path="/api/parkinglot/getById/{id}",
      *   summary="Get the parking lot by identification number",
      *   operationId="getparkinglotById",
      *   @SWG\Response(response=200, description="successful operation"),
@@ -101,7 +101,7 @@ class ParkingLotController extends Controller
 	/**
 	 *
 	 * 	@SWG\Put(
-	 * 		path="/parkinglot/{id}",
+	 * 		path="/api/parkinglot/update/{id}",
 	 * 		summary="update parking lot data",
      *   operationId="update parking lot",
      *   @SWG\Response(response=200, description="successful operation"),
@@ -133,7 +133,7 @@ class ParkingLotController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update($id,Request $request)
+    public function update(int $id,Request $request)
     {
         //
         $answer = "";

@@ -19,6 +19,6 @@ use Illuminate\Http\Request;
 
 Route::get('/parkinglot','ParkingLotController@index');
 Route::post('/parkinglot','ParkingLotController@store');
-Route::put('/parkinglot/{id}','ParkingLotController@update');
-Route::get('/parkinglot/{id}','ParkingLotController@show');
+Route::put('/parkinglot/update/{id}','ParkingLotController@update');
+Route::get('/parkinglot/getById/{id}','ParkingLotController@show');
 Route::delete('/parkinglot/{id}','ParkingLotController@destroy');

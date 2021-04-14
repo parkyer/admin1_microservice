@@ -85,7 +85,7 @@
                 }
             }
         },
-        "/api/parkinglot/{id}": {
+        "/api/parkinglot/getById/{id}": {
             "get": {
                 "summary": "Get the parking lot by identification number",
                 "operationId": "getparkinglotById",
@@ -108,32 +108,9 @@
                         "description": "internal server error"
                     }
                 }
-            },
-            "delete": {
-                "summary": "Delete the parking lot by identification number",
-                "operationId": "deleteparkinglotById",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "successful operation"
-                    },
-                    "406": {
-                        "description": "not acceptable"
-                    },
-                    "500": {
-                        "description": "internal server error"
-                    }
-                }
             }
         },
-        "/parkinglot/{id}": {
+        "/api/parkinglot/update/{id}": {
             "put": {
                 "summary": "update parking lot data",
                 "operationId": "update parking lot",
@@ -170,6 +147,31 @@
                                 }
                             }
                         }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    },
+                    "406": {
+                        "description": "not acceptable"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/api/parkinglot/{id}": {
+            "delete": {
+                "summary": "Delete the parking lot by identification number",
+                "operationId": "deleteparkinglotById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "integer"
                     }
                 ],
                 "responses": {
