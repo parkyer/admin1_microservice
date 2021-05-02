@@ -13,13 +13,14 @@ class CreateParkingLotsTable extends Migration
      */
     public function up()
     {
-        Schema::create('parking_lots', function (Blueprint $table) {
+        Schema::create('parking', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id-owner');
-            $table->integer('id-client');
-            $table->string('location')->default("Not Set");
-            $table->string('type')->default("car");
-            $table->timestamps();
+            $table->integer('id_owner');
+            $table->string('id_client');
+            $table->string('latitude');
+            $table->string('longitude');
+            $table->string('location');
+            $table->string('type');
         });
     }
 

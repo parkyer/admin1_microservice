@@ -16,12 +16,6 @@ class ParkingLotController extends Controller
      *   @SWG\Response(response=200, description="successful operation"),
      *   @SWG\Response(response=406, description="not acceptable"),
      *   @SWG\Response(response=500, description="internal server error"),
-	 *		@SWG\Parameter(
-     *          name="getall",
-     *          in="path",
-     *          required=false, 
-     *          type="string" 
-     *      ),
      * )
      *
      */
@@ -49,9 +43,11 @@ class ParkingLotController extends Controller
          *          in="body",
          *			description="Create ParkingLot",
          *          required=true,
-         *   		@SWG\Schema(@SWG\Property(property="id-owner", type="integer", example="5324"),
-         *              @SWG\Property(property="id-client", type="integer", example="123"),
-         *              @SWG\Property(property="Location", type="string", example="cll40kra32"),
+         *   		@SWG\Schema(@SWG\Property(property="id_owner", type="integer", example="5324"),
+         *              @SWG\Property(property="id_client", type="string", example="123"),
+         *              @SWG\Property(property="latitude", type="string", example="-30"),
+         *              @SWG\Property(property="longitude", type="string", example="30"),
+         *              @SWG\Property(property="location", type="string", example="cll40kra32"),
          *              @SWG\Property(property="type", type="string", example="car")),
          *      )
          * )
@@ -119,9 +115,11 @@ class ParkingLotController extends Controller
      *          in="body",
      *			description="New ParkingLot update data",
      *          required=true,
-     *   		@SWG\Schema(@SWG\Property(property="id-owner", type="integer", example="5324"),
-     *              @SWG\Property(property="id-client", type="integer", example="123"),
-     *              @SWG\Property(property="Location", type="string", example="cll40kra32"),
+     *   		@SWG\Schema(@SWG\Property(property="id_owner", type="integer", example="5324"),
+     *              @SWG\Property(property="id_client", type="string", example="123"),
+     *              @SWG\Property(property="latitude", type="string", example="-30"),
+     *              @SWG\Property(property="longitude", type="string", example="30"),
+     *              @SWG\Property(property="location", type="string", example="cll40kra32"),
      *              @SWG\Property(property="type", type="string", example="car")),
      *      )
 	 * 	)
