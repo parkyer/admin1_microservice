@@ -9,5 +9,5 @@ RUN apt-get update \
 WORKDIR /app
 COPY . /app
 RUN composer install
-CMD php artisan serve --host=0.0.0.0 --port=4194
+CMD php artisan serve --host= 35.175.24.175  --port=4194
 EXPOSE 4194
