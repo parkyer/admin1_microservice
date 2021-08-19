@@ -12,6 +12,7 @@ class ParkingLot extends Model
     public $incrementing = true;
     public $timestamps = false;
     protected $fillable = [
+        'id',
         'id_owner',
         'id_client',
         'latitude',
