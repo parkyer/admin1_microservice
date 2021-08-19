@@ -8,6 +8,8 @@ class ParkingLot extends Model
 {
     //
     protected $table = 'parking';
+    protected $id;
+    public $incrementing = true;
     public $timestamps = false;
     protected $fillable = [
         'id_owner',
