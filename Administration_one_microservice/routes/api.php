@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
-
+Route::get('/parkinglot/getOwnerParkingLots/{id_owner}','ParkingLotController@getOwnerParkingLots');
 Route::get('/parkinglot','ParkingLotController@index');
 Route::post('/parkinglot','ParkingLotController@store');
 Route::put('/parkinglot/update/{id}','ParkingLotController@update');
