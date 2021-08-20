@@ -174,4 +174,36 @@ class ParkingLotController extends Controller
         //
         return ParkingLot::destroy($id);
     }
+    /**
+     * @SWG\Get(
+     *   path="/api/parkinglot/getOwnerParkingLots/{id_owner}",
+     *   summary="Get the parking lot by owner identification number",
+     *   operationId="getparkinglotByOwnerId",
+     *   @SWG\Response(response=200, description="successful operation"),
+     *   @SWG\Response(response=406, description="not acceptable"),
+     *   @SWG\Response(response=500, description="internal server error"),
+	 *		@SWG\Parameter(
+     *          name="id_owner",
+     *          in="path",
+     *          required=true,
+     *          type="integer" 
+     *      ),
+     * )
+     *
+     */
+    /**
+     * Update the specified resource in storage.
+     * @param  int  $id_owner
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function getOwnerParkingLots(int $id_owner)
+    {
+        $ownerParkingLots = ParkingLot::all();
+        $ownerParkingLots = $ownerParkingLots->filter(function($parkinglot)
+        {
+            return $parkinglot->id_owner = $id_owner;
+        });
+        return $ownerParkingLots;
+    }
 }
