@@ -56,14 +56,12 @@ class ParkingLotController extends Controller
          */
     /**
      * Store a newly created resource in storage.
-     * @param  int $id
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(int $id,Request $request)
+    public function store(Request $request)
     {
         //
-        $request->id = $id;
         return ParkingLot::create($request->all());
     }
 
