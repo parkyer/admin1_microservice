@@ -199,6 +199,6 @@ class ParkingLotController extends Controller
      */
     public function getOwnerParkingLots(int $id_owner)
     {
-        return ParkingLot::where('id_owner','==',$id_owner)->get();
+        return ParkingLot::where('id_owner','=',$id_owner)->get();
     }
 }
